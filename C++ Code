@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+
+ void turnip (){
+  int prices[6] = {7,1,5,3,6,4};
+  int profit, index;
+  int low = prices[0];
+  int finalprofit = 0;
+  //cout << "Prices size" << sizeof(prices)/sizeof(prices[0])  << endl;
+  for (int i = 1; i < sizeof(prices)/sizeof(prices[0]); i++){
+    if(low > prices[i]){
+      low = prices[i];
+      index = i;
+    }
+  }
+  for (int e = index; e<sizeof(prices)/sizeof(prices[0]); e++){
+    profit = prices[e] - low;
+    if (profit >= 1){
+      if (profit > finalprofit){
+        finalprofit = profit;
+      }
+    }
+  }
+  cout << "The highest profit is $" << finalprofit << endl;
+}
+
+int main(){
+  turnip();
+}
